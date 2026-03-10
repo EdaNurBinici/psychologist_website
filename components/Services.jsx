@@ -1,11 +1,11 @@
 export default function Services() {
   const services = [
+    { icon: "🎮", title: "Oyun Terapisi & Atölyeleri", desc: "Çocukların oyun aracılığıyla duygularını ifade etmesi ve sosyal beceriler geliştirmesi." },
+    { icon: "🗣️", title: "Dil ve Sosyal Beceri Gelişimi", desc: "Konuşma, iletişim ve sosyal etkileşim becerilerinin geliştirilmesi." },
+    { icon: "🎒", title: "Okula Hazırlık & Adaptasyon", desc: "Anneden ayrılamayan çocuklar için okula uyum seansları ve hazırlık programı." },
     { icon: "🧠", title: "Bilişsel Davranışçı Terapi", desc: "Düşünce ve davranışların duygular üzerindeki etkisini çalışarak sorunları çözmek." },
     { icon: "💫", title: "EMDR Terapi", desc: "Travmatik deneyimlerin işlenmesinde etkili bir terapi yöntemi." },
-    { icon: "🔍", title: "Psikodinamik Terapi", desc: "Bilinçaltı dinamikleri keşfederek derin değişim sağlamak." },
-    { icon: "🧘", title: "Mindfulness", desc: "Farkındalık ve meditasyon teknikleriyle stres yönetimi." },
-    { icon: "🎯", title: "Şema Terapi", desc: "Uzun süreli psikolojik sorunların köklerine inen terapi." },
-    { icon: "❤️", title: "Travma Terapisi", desc: "Travmatik olayların etkilerini azaltmak ve iyileşme sağlamak." },
+    { icon: "🧘", title: "Mindfulness & Stres Yönetimi", desc: "Farkındalık ve meditasyon teknikleriyle stres yönetimi." },
   ];
 
   return (
@@ -13,8 +13,8 @@ export default function Services() {
       <div className="container">
         <div className="services-header">
           <span className="section-label">Hizmetler</span>
-          <h2 className="section-title">Sunduğum Terapi Yöntemleri</h2>
-          <p className="section-subtitle">Kanıta dayalı, etkili terapi yöntemleriyle kişiselleştirilmiş tedavi planları sunuyorum.</p>
+          <h2 className="section-title">Çocuk ve Yetişkin Terapi Hizmetleri</h2>
+          <p className="section-subtitle">Kanıta dayalı, etkili terapi yöntemleriyle çocuklar ve yetişkinler için kişiselleştirilmiş tedavi planları sunuyorum.</p>
         </div>
         <div className="services-grid">
           {services.map((service, idx) => (

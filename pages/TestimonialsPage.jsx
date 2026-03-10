@@ -25,12 +25,12 @@ export default function TestimonialsPage() {
   useScrollReveal();
 
   const testimonials = [
-    { stars: "⭐⭐⭐⭐⭐", text: "Dr. Kaya'nın profesyonel yaklaşımı ve empati dolu tutumu beni çok etkiledi. Seanslar sonrası kendimi çok daha iyi hissediyorum.", author: "Aylin K.", role: "Danışan" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Yıllardır çözemediğim sorunları Dr. Kaya ile çözebildim. Çok teşekkür ederim.", author: "Mehmet Y.", role: "Danışan" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Güvenli bir ortamda kendimi ifade edebilmek ve destek almak çok değerli. Herkese tavsiye ederim.", author: "Zeynep T.", role: "Danışan" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Profesyonel, saygılı ve çok etkili. Hayatımda büyük bir değişim yarattı.", author: "Can B.", role: "Danışan" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Kendimi anlaşılmış hissettim. Dr. Kaya gerçekten dinliyor ve yardımcı oluyor.", author: "Fatma S.", role: "Danışan" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Terapi seansları benim için dönüm noktası oldu. Çok memnunum.", author: "Ali D.", role: "Danışan" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Oğlum sosyalleşmeyi ve paylaşmayı öğrendi.", author: "Ayşe A.", role: "Veli" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Dil gelişimi ve konuşması gözle görülür şekilde düzeldi.", author: "Mehmet Y.", role: "Veli" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Bana yapışık gezen çocuğum artık kendi başına oynuyor.", author: "Zeynep T.", role: "Veli" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Dr. Kaya'nın oyun terapisi yaklaşımı çocuğum için harika sonuçlar verdi. Çok memnunum.", author: "Fatma S.", role: "Veli" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Okula başlamadan önce adaptasyon seansları çocuğuma çok güven verdi.", author: "Ali D.", role: "Veli" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Profesyonel, saygılı ve çocuğumla çok iyi iletişim kuruyor. Kesinlikle tavsiye ederim.", author: "Can B.", role: "Veli" },
   ];
 
   return (

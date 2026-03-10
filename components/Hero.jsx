@@ -44,10 +44,10 @@ export default function Hero() {
               />
             </div>
             <div className="hero-float-card hero-float-card-1">
-              <div className="hero-float-icon hero-float-icon-green">🧠</div>
+              <div className="hero-float-icon hero-float-icon-green">🎮</div>
               <div>
-                <div className="hero-float-text-main">Uzman Terapi</div>
-                <div className="hero-float-text-sub">BDT & Psikodinamik</div>
+                <div className="hero-float-text-main">Oyun Terapisi</div>
+                <div className="hero-float-text-sub">Çocuk Odaklı</div>
               </div>
             </div>
             <div className="hero-float-card hero-float-card-2">
