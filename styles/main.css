@@ -1483,3 +1483,52 @@ nav[data-page="/yorumlar"].scrolled .navbar-menu-btn {
   .section-label { font-size: 0.7rem; }
   .btn { font-size: 0.88rem; padding: 12px 20px; }
 }
+
+
+/* =============================================APPOINTMENT GRIDS============================================= */
+.appt-date-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.appt-time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.appt-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 768px) {
+  .appt-date-grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 10px;
+  }
+  
+  .appt-time-grid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 10px;
+  }
+  
+  .appt-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =============================================PAGE HEADER============================================= */
+.page-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.page-hero {
+  padding: 80px 0 60px;
+}
