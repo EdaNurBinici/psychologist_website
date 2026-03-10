@@ -41,18 +41,18 @@ export default function About() {
             <p className="section-subtitle">Çocuklar için güvenli, renkli ve eğlenceli bir terapi ortamı</p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
-            <div className="reveal" style={{ background: "var(--color-surface-alt)", borderRadius: "var(--radius-md)", padding: "20px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", marginBottom: "12px" }}>🎮</div>
+            <div className="reveal" style={{ background: "var(--color-surface-alt)", borderRadius: "var(--radius-md)", padding: "20px", textAlign: "center", overflow: "hidden" }}>
+              <img src="/oyun_terapisi.jpg" alt="Oyun Terapisi" style={{ width: "100%", height: "120px", objectFit: "cover", borderRadius: "var(--radius-sm)", marginBottom: "12px" }} />
               <h4 style={{ fontSize: "1rem", marginBottom: "8px", color: "var(--color-primary-dark)" }}>Oyun Terapisi</h4>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Çocukların duygularını oyun aracılığıyla ifade etmesi</p>
             </div>
-            <div className="reveal" style={{ background: "var(--color-surface-alt)", borderRadius: "var(--radius-md)", padding: "20px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", marginBottom: "12px" }}>🧩</div>
+            <div className="reveal" style={{ background: "var(--color-surface-alt)", borderRadius: "var(--radius-md)", padding: "20px", textAlign: "center", overflow: "hidden" }}>
+              <img src="/egitici_oyuncak.jpg" alt="Eğitici Oyuncaklar" style={{ width: "100%", height: "120px", objectFit: "cover", borderRadius: "var(--radius-sm)", marginBottom: "12px" }} />
               <h4 style={{ fontSize: "1rem", marginBottom: "8px", color: "var(--color-primary-dark)" }}>Eğitici Oyuncaklar</h4>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Gelişim aşamasına uygun materyaller</p>
             </div>
-            <div className="reveal" style={{ background: "var(--color-surface-alt)", borderRadius: "var(--radius-md)", padding: "20px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", marginBottom: "12px" }}>🎨</div>
+            <div className="reveal" style={{ background: "var(--color-surface-alt)", borderRadius: "var(--radius-md)", padding: "20px", textAlign: "center", overflow: "hidden" }}>
+              <img src="/atolye.webp" alt="Yaratıcı Atölyeler" style={{ width: "100%", height: "120px", objectFit: "cover", borderRadius: "var(--radius-sm)", marginBottom: "12px" }} />
               <h4 style={{ fontSize: "1rem", marginBottom: "8px", color: "var(--color-primary-dark)" }}>Yaratıcı Atölyeler</h4>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Sanat ve müzik terapisi etkinlikleri</p>
             </div>
