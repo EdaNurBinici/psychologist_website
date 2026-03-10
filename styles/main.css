@@ -1027,7 +1027,6 @@ nav[data-page="/yorumlar"].scrolled .navbar-menu-btn {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  overflow: hidden;
   transition: all var(--transition);
 }
 
@@ -1078,13 +1077,12 @@ nav[data-page="/yorumlar"].scrolled .navbar-menu-btn {
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  display: none;
 }
 
 .faq-item.open .faq-answer {
-  max-height: 600px;
+  display: block;
+  animation: fadeSlideUp 0.25s ease both;
 }
 
 .faq-answer-inner {
