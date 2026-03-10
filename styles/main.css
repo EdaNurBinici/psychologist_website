@@ -1080,7 +1080,7 @@ nav[data-page="/yorumlar"].scrolled .navbar-menu-btn {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-slow);
+  transition: max-height 0.5s ease-in-out;
 }
 
 .faq-item.open .faq-answer {
