@@ -36,7 +36,7 @@ export default function Contact() {
               <div className="contact-card-icon" style={{background: "rgba(74,124,111,0.1)", color: "var(--color-primary)"}}>📞</div>
               <div>
                 <div className="contact-card-label">Telefon</div>
-                <div className="contact-card-value"><a href="tel:+905551234567">[Telefon Numarası]</a></div>
+                <div className="contact-card-value"><a href="tel:+905555555555">0555 555 5555</a></div>
               </div>
             </div>
             <div className="contact-card reveal">

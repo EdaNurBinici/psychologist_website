@@ -17,9 +17,9 @@ export default function ContactPage() {
 
   const infoCards = [
     { icon: "📍", title: "Adres", value: "Nişantaşı, Şişli / İstanbul", href: null },
-    { icon: "📞", title: "Telefon", value: "+90 500 123 45 67", href: "tel:+905001234567" },
-    { icon: "✉️", title: "E-posta", value: "info@drayse.com", href: "mailto:info@drayse.com" },
-    { icon: "💬", title: "WhatsApp", value: "Mesaj Gönderin", href: "https://wa.me/905001234567", color: "var(--color-whatsapp)" },
+    { icon: "📞", title: "Telefon", value: "0555 555 5555", href: "tel:+905555555555" },
+    { icon: "✉️", title: "E-posta", value: "ornek@info.com", href: "mailto:ornek@info.com" },
+    { icon: "💬", title: "WhatsApp", value: "Mesaj Gönderin", href: "https://wa.me/905555555555", color: "var(--color-whatsapp)" },
   ];
 
   const hours = [
