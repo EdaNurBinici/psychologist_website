@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Ayşe Kaya | Klinik Psikolog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-bg: #FAFAF8; --color-surface: #FFFFFF; --color-surface-alt: #F5F3EE;
+  --color-primary: #4A7C6F; --color-primary-light: #6B9E91; --color-primary-dark: #2E5C52;
+  --color-accent: #C4A882; --color-accent-light: #DCC9AE;
+  --color-text: #2A2A2A; --color-text-muted: #7A7A7A; --color-border: #E8E4DC;
+  --color-whatsapp: #25D366;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --radius-sm: 6px; --radius-md: 12px; --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06); --shadow-md: 0 8px 32px rgba(0,0,0,0.10); --shadow-lg: 0 20px 60px rgba(0,0,0,0.14);
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; }
+h1 { font-size: clamp(2.8rem,6vw,5rem); }
+h2 { font-size: clamp(2rem,4vw,3rem); }
+h3 { font-size: clamp(1.3rem,2.5vw,1.8rem); }
+p { font-size: 1rem; line-height: 1.75; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section-label { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-primary); padding: 6px 14px; background: rgba(74,124,111,0.08); border-radius: 100px; margin-bottom: 16px; }
+.section-title { color: var(--color-text); margin-bottom: 16px; }
+.section-subtitle { font-size: 1.1rem; color: var(--color-text-muted); max-width: 560px; line-height: 1.7; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; cursor: pointer; border: none; transition: all var(--transition); white-space: nowrap; }
+.btn-primary { background: var(--color-primary); color: white; box-shadow: 0 4px 16px rgba(74,124,111,0.3); }
+.btn-primary:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--color-primary); border: 1.5px solid var(--color-primary); }
+.btn-outline:hover { background: var(--color-primary); color: white; transform: translateY(-2px); }
+.btn-whatsapp { background: var(--color-whatsapp); color: white; box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+.btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+.btn-phone { background: var(--color-accent); color: white; }
+.btn-phone:hover { background: #b09070; transform: translateY(-2px); }
+
+/* Navbar */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all var(--transition); }
+.navbar.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); padding: 14px 0; box-shadow: var(--shadow-sm); }
+.navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+.navbar-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--color-primary-dark); }
+.navbar-logo span { color: var(--color-accent); }
+.navbar-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.navbar-links a { font-size: 0.9rem; font-weight: 500; color: var(--color-text-muted); transition: color var(--transition); }
+.navbar-links a:hover { color: var(--color-primary); }
+.navbar-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--color-text); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: white; z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--color-text); }
+.mobile-menu a:hover { color: var(--color-primary); }
+.mobile-menu-close { position: absolute; top: 24px; right: 24px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--color-text-muted); }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: linear-gradient(135deg, #F0EDE6 0%, #E8F4F0 60%, #F5F3EE 100%); padding: 120px 0 80px; }
+.hero-bg-circle { position: absolute; border-radius: 50%; opacity: 0.12; }
+.hero-bg-circle-1 { width: 600px; height: 600px; background: var(--color-primary); top: -200px; right: -100px; }
+.hero-bg-circle-2 { width: 300px; height: 300px; background: var(--color-accent); bottom: -100px; left: -50px; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+.hero-content { animation: fadeSlideUp 0.8s ease both; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--color-border); border-radius: 100px; padding: 8px 16px; font-size: 0.8rem; font-weight: 500; color: var(--color-primary); margin-bottom: 28px; box-shadow: var(--shadow-sm); }
+.hero-badge-dot { width: 8px; height: 8px; background: var(--color-whatsapp); border-radius: 50%; animation: pulse 2s infinite; }
+.hero h1 { color: var(--color-primary-dark); margin-bottom: 8px; }
+.hero h1 em { font-style: italic; color: var(--color-accent); }
+.hero-title-sub { font-family: var(--font-display); font-size: clamp(1.1rem,2vw,1.4rem); color: var(--color-primary); font-weight: 400; margin-bottom: 24px; letter-spacing: 0.02em; }
+.hero-desc { color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 40px; max-width: 480px; }
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-stats { display: flex; gap: 32px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+.hero-stat-number { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--color-primary-dark); display: block; }
+.hero-stat-label { font-size: 0.8rem; color: var(--color-text-muted); }
+.hero-image-wrap { position: relative; animation: fadeSlideLeft 0.8s 0.2s ease both; }
+.hero-image-card { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/5; background: var(--color-surface-alt); position: relative; }
+.hero-image-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: linear-gradient(160deg, #D4E8E3 0%, #EAE0D5 100%); min-height: 480px; }
+.hero-image-placeholder svg { opacity: 0.4; color: var(--color-primary-dark); }
+.hero-image-placeholder span { font-size: 0.85rem; color: var(--color-text-muted); font-style: italic; }
+.hero-float-card { position: absolute; background: white; border-radius: var(--radius-md); padding: 14px 18px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px; }
+.hero-float-card-1 { bottom: 32px; left: -32px; animation: float 3s ease-in-out infinite; }
+.hero-float-card-2 { top: 40px; right: -24px; animation: float 3s 1.5s ease-in-out infinite; }
+.hero-float-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.hero-float-icon-green { background: rgba(74,124,111,0.1); }
+.hero-float-icon-accent { background: rgba(196,168,130,0.15); }
+.hero-float-text-main { font-size: 0.85rem; font-weight: 600; color: var(--color-text); }
+.hero-float-text-sub { font-size: 0.75rem; color: var(--color-text-muted); }
+
+/* About */
+.about { padding: 100px 0; background: var(--color-surface); }
+.about-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+.about-image-card { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 3/4; background: linear-gradient(160deg, #D4E8E3 0%, #EAE0D5 100%); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); min-height: 360px; }
+.about-image-card svg { opacity: 0.3; color: var(--color-primary-dark); }
+.about-image-wrap { position: relative; }
+.about-accent-block { position: absolute; bottom: -24px; right: -24px; width: 160px; height: 160px; background: var(--color-primary); border-radius: var(--radius-md); z-index: -1; opacity: 0.15; }
+.about-content .section-subtitle { max-width: none; margin-bottom: 28px; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+.about-tag { background: rgba(74,124,111,0.08); color: var(--color-primary-dark); border: 1px solid rgba(74,124,111,0.2); border-radius: 100px; padding: 6px 16px; font-size: 0.85rem; font-weight: 500; }
+.about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.about-credential { display: flex; align-items: flex-start; gap: 10px; padding: 14px; background: var(--color-surface-alt); border-radius: var(--radius-sm); }
+.about-credential-icon { font-size: 1.1rem; margin-top: 1px; }
+.about-credential-text { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.4; }
+
+/* Services */
+.services { padding: 100px 0; background: var(--color-surface-alt); }
+.services-header { text-align: center; margin-bottom: 60px; }
+.services-header .section-subtitle { margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.service-card { background: var(--color-surface); border-radius: var(--radius-md); padding: 32px 28px; border: 1px solid var(--color-border); transition: all var(--transition); position: relative; overflow: hidden; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light)); transform: scaleX(0); transition: transform var(--transition); }
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon { width: 56px; height: 56px; border-radius: var(--radius-sm); background: rgba(74,124,111,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+.service-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--color-primary-dark); }
+.service-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.65; }
+
+/* Process */
+.process { padding: 100px 0; background: var(--color-surface); }
+.process-header { text-align: center; margin-bottom: 70px; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.process-steps::before { content: ''; position: absolute; top: 32px; left: calc(12.5% + 32px); right: calc(12.5% + 32px); height: 1.5px; background: linear-gradient(90deg, var(--color-primary-light), var(--color-accent-light)); z-index: 0; }
+.process-step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
+.process-step-number { width: 64px; height: 64px; border-radius: 50%; background: white; border: 2.5px solid var(--color-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--color-primary); box-shadow: 0 0 0 8px var(--color-surface-alt); }
+.process-step h4 { font-size: 1.05rem; color: var(--color-primary-dark); margin-bottom: 10px; }
+.process-step p { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; }
+
+/* Testimonials */
+.testimonials { padding: 100px 0; background: linear-gradient(135deg, #2E5C52 0%, #4A7C6F 100%); position: relative; overflow: hidden; }
+.testimonials::before { content: '"'; position: absolute; font-family: var(--font-display); font-size: 40rem; color: rgba(255,255,255,0.04); top: -100px; left: -40px; line-height: 1; pointer-events: none; }
+.testimonials .section-label { background: rgba(255,255,255,0.15); color: white; }
+.testimonials .section-title { color: white; }
+.testimonials .section-subtitle { color: rgba(255,255,255,0.7); }
+.testimonials-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; position: relative; z-index: 1; }
+.testimonial-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-md); padding: 32px; transition: all var(--transition); }
+.testimonial-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-4px); }
+.testimonial-stars { color: var(--color-accent-light); margin-bottom: 16px; }
+.testimonial-text { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 600; color: white; flex-shrink: 0; }
+.testimonial-author-name { font-size: 0.85rem; font-weight: 600; color: white; }
+.testimonial-author-role { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+/* FAQ */
+.faq { padding: 100px 0; background: var(--color-surface-alt); }
+.faq-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
+.faq-sidebar { position: sticky; top: 100px; }
+.faq-sidebar .section-subtitle { margin-bottom: 32px; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; transition: all var(--transition); }
+.faq-item.open { border-color: var(--color-primary-light); box-shadow: var(--shadow-sm); }
+.faq-question { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; cursor: pointer; background: none; border: none; width: 100%; text-align: left; font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: var(--color-text); transition: color var(--transition); }
+.faq-question:hover { color: var(--color-primary); }
+.faq-icon { width: 24px; height: 24px; border-radius: 50%; background: rgba(74,124,111,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; color: var(--color-primary); transition: transform var(--transition); }
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--color-primary); color: white; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-answer-inner { padding: 0 22px 20px; font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; }
+
+/* Contact */
+.contact { padding: 100px 0; background: var(--color-surface); }
+.contact-header { text-align: center; margin-bottom: 60px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.contact-card { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: var(--color-surface-alt); border-radius: var(--radius-md); transition: all var(--transition); }
+.contact-card:hover { box-shadow: var(--shadow-sm); transform: translateX(4px); }
+.contact-card-icon { width: 48px; height: 48px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.contact-card-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 4px; }
+.contact-card-value { font-size: 1rem; font-weight: 600; color: var(--color-text); }
+.contact-map { border-radius: var(--radius-md); overflow: hidden; height: 200px; background: linear-gradient(135deg, #D4E8E3 0%, #C8D8CC 100%); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--color-text-muted); }
+.contact-form-wrap { background: var(--color-surface-alt); border-radius: var(--radius-lg); padding: 40px; border: 1px solid var(--color-border); }
+.contact-form-wrap h3 { font-size: 1.4rem; color: var(--color-primary-dark); margin-bottom: 8px; }
+.contact-form-wrap > p { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 28px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.form-group label { font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted); letter-spacing: 0.05em; }
+.form-group input, .form-group textarea, .form-group select { padding: 12px 16px; background: white; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9rem; color: var(--color-text); transition: border-color var(--transition), box-shadow var(--transition); outline: none; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(74,124,111,0.12); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit { width: 100%; padding: 15px; justify-content: center; font-size: 1rem; font-weight: 600; }
+.form-success { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: rgba(74,124,111,0.1); border: 1px solid rgba(74,124,111,0.25); border-radius: var(--radius-sm); font-size: 0.9rem; color: var(--color-primary-dark); margin-bottom: 16px; }
+
+/* Footer */
+.footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 60px 0 28px; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+.footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+.footer-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: white; }
+.footer-logo span { color: var(--color-accent-light); }
+.footer-col h4 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: color var(--transition); }
+.footer-col ul a:hover { color: white; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; }
+
+/* Floating */
+.floating-buttons { position: fixed; bottom: 32px; right: 32px; display: flex; flex-direction: column; gap: 12px; z-index: 900; }
+.floating-btn { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; cursor: pointer; border: none; box-shadow: var(--shadow-md); transition: all var(--transition); text-decoration: none; }
+.floating-btn:hover { transform: scale(1.1) translateY(-2px); }
+.floating-btn-whatsapp { background: var(--color-whatsapp); color: white; }
+.floating-btn-phone { background: var(--color-primary); color: white; }
+
+/* Animations */
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: 0.6; } }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .hero-buttons { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-image-wrap { max-width: 420px; margin: 0 auto; }
+  .hero-float-card-1 { left: -16px; }
+  .hero-float-card-2 { right: -8px; }
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .about-image-wrap { max-width: 360px; margin: 0 auto; }
+  .process-steps { grid-template-columns: repeat(2,1fr); gap: 40px; }
+  .process-steps::before { display: none; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  .faq-inner { grid-template-columns: 1fr; gap: 40px; }
+  .faq-sidebar { position: static; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  .navbar-links, .navbar-cta .btn { display: none; }
+  .navbar-menu-btn { display: block; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .services-grid { grid-template-columns: 1fr; }
+  .about-credentials { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo">Dr. Ayşe<span>.</span></a>
+      <ul class="navbar-links">
+        <li><a href="#hakkinda">Hakkında</a></li>
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#surec">Süreç</a></li>
+        <li><a href="#yorumlar">Yorumlar</a></li>
+        <li><a href="#sss">SSS</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="#iletisim" class="btn btn-primary">Randevu Al</a>
+        <button class="navbar-menu-btn" onclick="document.getElementById('mobile-menu').classList.add('open')">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <a href="#hakkinda" onclick="document.getElementById('mobile-menu').classList.remove('open')">Hakkında</a>
+  <a href="#hizmetler" onclick="document.getElementById('mobile-menu').classList.remove('open')">Hizmetler</a>
+  <a href="#surec" onclick="document.getElementById('mobile-menu').classList.remove('open')">Süreç</a>
+  <a href="#yorumlar" onclick="document.getElementById('mobile-menu').classList.remove('open')">Yorumlar</a>
+  <a href="#sss" onclick="document.getElementById('mobile-menu').classList.remove('open')">SSS</a>
+  <a href="#iletisim" class="btn btn-primary" onclick="document.getElementById('mobile-menu').classList.remove('open')">Randevu Al</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="ana-sayfa">
+  <div class="hero-bg-circle hero-bg-circle-1"></div>
+  <div class="hero-bg-circle hero-bg-circle-2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Şu an randevu alınabilir
+        </div>
+        <h1>Dr. Ayşe<br><em>Kaya</em></h1>
+        <p class="hero-title-sub">Klinik Psikolog — Psikoterapi Uzmanı</p>
+        <p class="hero-desc">15 yıllık deneyimle çocuk, ergen ve yetişkinlere psikoterapi hizmeti sunuyorum. Birlikte daha sağlıklı bir zihinsel yaşam inşa edelim.</p>
+        <div class="hero-buttons">
+          <a href="#iletisim" class="btn btn-primary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Randevu Al
+          </a>
+          <a href="https://wa.me/905001234567" class="btn btn-whatsapp" target="_blank">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+905001234567" class="btn btn-phone">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            Hemen Ara
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div><span class="hero-stat-number">15+</span><span class="hero-stat-label">Yıl Deneyim</span></div>
+          <div><span class="hero-stat-number">800+</span><span class="hero-stat-label">Danışan</span></div>
+          <div><span class="hero-stat-number">4.9★</span><span class="hero-stat-label">Memnuniyet</span></div>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-card">
+          <div class="hero-image-placeholder">
+            <svg width="80" height="80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/></svg>
+            <span>Psikolog fotoğrafı buraya</span>
+          </div>
+        </div>
+        <div class="hero-float-card hero-float-card-1">
+          <div class="hero-float-icon hero-float-icon-green">🧠</div>
+          <div>
+            <div class="hero-float-text-main">Uzman Terapi</div>
+            <div class="hero-float-text-sub">BDT & Psikodinamik</div>
+          </div>
+        </div>
+        <div class="hero-float-card hero-float-card-2">
+          <div class="hero-float-icon hero-float-icon-accent">🎓</div>
+          <div>
+            <div class="hero-float-text-main">Boğaziçi Üniversitesi</div>
+            <div class="hero-float-text-sub">Klinik Psikoloji</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="hakkinda">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-image-wrap reveal">
+        <div class="about-image-card">
+          <svg width="100" height="100" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="about-accent-block"></div>
+      </div>
+      <div class="about-content reveal">
+        <span class="section-label">Hakkımda</span>
+        <h2 class="section-title">İçinizdeki gücü<br>birlikte keşfedelim</h2>
+        <p class="section-subtitle">Merhaba, ben Dr. Ayşe Kaya. 15 yılı aşkın klinik deneyimimle bireylerin psikolojik sağlığını güçlendirmelerine, kendilerini daha iyi tanımalarına ve yaşam kalitelerini artırmalarına destek oluyorum.</p>
+        <p class="section-subtitle" style="margin-bottom:28px">Seanslarımda güvenli, yargısız ve destekleyici bir ortam sunmayı en temel ilkem olarak benimsiyorum.</p>
+        <div class="about-tags">
+          <span class="about-tag">Bilişsel Davranışçı Terapi</span>
+          <span class="about-tag">EMDR</span>
+          <span class="about-tag">Psikodinamik Terapi</span>
+          <span class="about-tag">Mindfulness</span>
+          <span class="about-tag">Şema Terapi</span>
+          <span class="about-tag">Travma Terapisi</span>
+        </div>
+        <div class="about-credentials">
+          <div class="about-credential"><span class="about-credential-icon">🎓</span><span class="about-credential-text">Boğaziçi Üniversitesi, Psikoloji Lisans</span></div>
+          <div class="about-credential"><span class="about-credential-icon">📜</span><span class="about-credential-text">İstanbul Üniversitesi, Klinik Psikoloji Yüksek Lisans</span></div>
+          <div class="about-credential"><span class="about-credential-icon">🏆</span><span class="about-credential-text">Türk Psikologlar Derneği Üyesi</span></div>
+          <div class="about-credential"><span class="about-credential-icon">🌍</span><span class="about-credential-text">EMDR Türkiye Sertifikalı Uygulayıcı</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="hizmetler">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label">Hizmetler</span>
+      <h2 class="section-title">Sunduğum terapi hizmetleri</h2>
+      <p class="section-subtitle">Hayatın her dönemine ve her ihtiyaca özel, kanıta dayalı terapi yöntemleriyle yanınızdayım.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon">🧒</div><h3>Çocuk Terapisi</h3><p>6–12 yaş arası çocuklarda duygusal, davranışsal ve gelişimsel sorunlara oyun terapisi ve bilişsel tekniklerle destek sağlanır.</p></div>
+      <div class="service-card reveal"><div class="service-icon">🧑</div><h3>Ergen Danışmanlığı</h3><p>Kimlik gelişimi, akran ilişkileri, okul stresi ve aile çatışmaları gibi ergenlik dönemi zorlukları ile başa çıkmada rehberlik.</p></div>
+      <div class="service-card reveal"><div class="service-icon">🧑‍💼</div><h3>Yetişkin Psikoterapisi</h3><p>Depresyon, kaygı bozukluğu, öz güven sorunları, ilişki problemleri ve stres yönetimi için bireysel terapi seansları.</p></div>
+      <div class="service-card reveal"><div class="service-icon">👨‍👩‍👧</div><h3>Aile Danışmanlığı</h3><p>Aile üyeleri arasındaki iletişim sorunlarını çözmek, sağlıklı ilişki kalıpları oluşturmak için sistemik aile terapisi.</p></div>
+      <div class="service-card reveal"><div class="service-icon">💑</div><h3>Çift Terapisi</h3><p>İletişim problemleri, güven sorunları ve ilişkisel zorlukları ele alarak çiftlerin daha sağlıklı bir birliktelik kurmasına destek.</p></div>
+      <div class="service-card reveal"><div class="service-icon">🩹</div><h3>Travma Terapisi</h3><p>EMDR ve travma odaklı bilişsel davranışçı terapi ile geçmiş yaşantıların yol açtığı psikolojik yaraları iyileştirme.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="surec">
+  <div class="container">
+    <div class="process-header reveal">
+      <span class="section-label">Süreç</span>
+      <h2 class="section-title">Nasıl çalışıyoruz?</h2>
+      <p class="section-subtitle">Terapi yolculuğu dört adımda ilerler. Her adımda yanınızda ve rehberinizim.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal"><div class="process-step-number">01</div><h4>Randevu Alın</h4><p>WhatsApp, telefon veya form aracılığıyla kolayca ilk randevunuzu oluşturun.</p></div>
+      <div class="process-step reveal"><div class="process-step-number">02</div><h4>Ön Görüşme</h4><p>İlk seansta ihtiyaçlarınızı ve beklentilerinizi anlamak için samimi bir sohbet yaparız.</p></div>
+      <div class="process-step reveal"><div class="process-step-number">03</div><h4>Seans Planı</h4><p>Size özel bir terapi planı hazırlanır; hedefler ve yöntemler birlikte belirlenir.</p></div>
+      <div class="process-step reveal"><div class="process-step-number">04</div><h4>Süreç & Gelişim</h4><p>Düzenli seanslarla ilerleyerek psikolojik sağlığınızı güçlendiririz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="yorumlar">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="section-label">Yorumlar</span>
+      <h2 class="section-title">Danışanlar ne diyor?</h2>
+      <p class="section-subtitle">Gerçek danışan deneyimleri — isimler gizlilik nedeniyle kısaltılmıştır.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Dr. Ayşe ile geçirdiğim terapi süreci hayatımı gerçekten değiştirdi. Kendimi çok daha güçlü ve dengeli hissediyorum."</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:#4A7C6F">EK</div><div><div class="testimonial-author-name">Elif K.</div><div class="testimonial-author-role">Yetişkin danışan</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Oğlumun davranışsal sorunları için başvurduk. Dr. Ayşe'nin çocuğumuzla kurduğu bağ muhteşemdi. Büyük ilerleme kaydettik."</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:#7A5C8F">MA</div><div><div class="testimonial-author-name">Mehmet A.</div><div class="testimonial-author-role">Çocuk danışanın ebeveyni</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Anksiyete ile yıllarca mücadele ettim. Buradaki seanslar sayesinde artık günlük hayatımı çok daha kolay yaşıyorum."</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:#8F5C5C">ST</div><div><div class="testimonial-author-name">Selin T.</div><div class="testimonial-author-role">Yetişkin danışan</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Ergen kızımız için geldik. Aile içi iletişimimiz de dahil olmak üzere çok kapsamlı bir destek aldık."</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:#5C7A8F">AB</div><div><div class="testimonial-author-name">Aylin B.</div><div class="testimonial-author-role">Ergen danışanın ebeveyni</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Eşimle çift terapisine başladığımızda ilişkimiz çok gergin bir noktadaydı. Şimdi çok daha sağlıklı bir iletişim kurabiliyoruz."</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:#8F7A5C">KY</div><div><div class="testimonial-author-name">Kerem Y.</div><div class="testimonial-author-role">Çift terapisi danışanı</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Travmamla yüzleşmek korkutucuydu ama Dr. Ayşe'nin rehberliğinde her şey çok daha yönetilebilir hale geldi."</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:#5C8F6F">DÖ</div><div><div class="testimonial-author-name">Deniz Ö.</div><div class="testimonial-author-role">Travma terapisi danışanı</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="sss">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-sidebar reveal">
+        <span class="section-label">Sık Sorulan Sorular</span>
+        <h2 class="section-title">Aklınıza takılanlar</h2>
+        <p class="section-subtitle">Terapi sürecine dair merak ettiğiniz her şeyi sormaktan çekinmeyin.</p>
+        <a href="#iletisim" class="btn btn-outline" style="margin-top:16px">Başka sorunuz var mı?</a>
+      </div>
+      <div class="faq-list reveal" id="faq-list">
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Terapi seansları ne kadar sürer? <span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Her seans 50 dakika sürmektedir. İlk değerlendirme seansı 60–70 dakika arasında olabilir. Seans sıklığı genellikle haftada bir olmakla birlikte, ihtiyaca göre haftada iki seans da planlanabilir.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Online terapi mümkün mü? <span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Evet, video görüşme (Zoom veya Google Meet) üzerinden online seans imkânı sunulmaktadır. Yoğun gündem veya yurt dışında yaşayan danışanlar için online terapi oldukça etkili sonuçlar vermektedir.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Terapi ne kadar sürer? <span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Süre tamamen kişiye ve sorunun yapısına göre değişir. Bazı spesifik sorunlar 8–12 seansta çözüme kavuşabilirken, daha derin çalışmalar için 6–12 ay veya daha fazla süre gerekebilir.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Seans ücretleri nedir? <span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Seans ücreti ve ödeme koşulları için lütfen iletişime geçin. Fiyatlandırma bireysel ve çift seansları için farklılık gösterebilir. İlk ücretsiz ön görüşme imkânı sunulmaktadır.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Sigorta kapsamında mısınız? <span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Bazı özel sigorta şirketleri psikolog seanslarını kısmen karşılayabilmektedir. Kendi sigorta poliçenizi inceleyerek psikoloji desteği kapsamını öğrenebilirsiniz.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Seanslarda konuşulanlar gizli mi? <span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Evet, terapi gizliliği yasal bir güvencedir. Paylaştıklarınız kesinlikle üçüncü şahıslarla paylaşılmaz. Yalnızca ciddi tehlike durumlarında yasal zorunluluklar kapsamında hareket edilebilir.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="iletisim">
+  <div class="container">
+    <div class="contact-header reveal">
+      <span class="section-label">İletişim</span>
+      <h2 class="section-title">Randevu alın</h2>
+      <p class="section-subtitle">İlk adımı atmak için buradayım. Formdan, telefondan veya WhatsApp'tan ulaşabilirsiniz.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <a href="tel:+905001234567" class="contact-card" style="text-decoration:none">
+          <div class="contact-card-icon" style="background:rgba(74,124,111,0.1)">📞</div>
+          <div><div class="contact-card-label">Telefon</div><div class="contact-card-value">+90 500 123 45 67</div></div>
+        </a>
+        <a href="https://wa.me/905001234567" target="_blank" class="contact-card" style="text-decoration:none">
+          <div class="contact-card-icon" style="background:rgba(37,211,102,0.1)">💬</div>
+          <div><div class="contact-card-label">WhatsApp</div><div class="contact-card-value">Hızlı randevu için</div></div>
+        </a>
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background:rgba(196,168,130,0.15)">📍</div>
+          <div><div class="contact-card-label">Adres</div><div class="contact-card-value">Nişantaşı, Şişli / İstanbul</div></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background:rgba(74,124,111,0.08)">🕐</div>
+          <div><div class="contact-card-label">Çalışma Saatleri</div><div class="contact-card-value">Pzt–Cmt, 09:00–19:00</div></div>
+        </div>
+        <div class="contact-map">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Google Harita buraya entegre edilecek</span>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <h3>Randevu Formu</h3>
+        <p>Size 24 saat içinde dönüş yapacağım.</p>
+        <div class="form-success" id="form-success" style="display:none">✅ Mesajınız alındı! En kısa sürede size ulaşacağım.</div>
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Ad Soyad</label><input type="text" placeholder="Adınız" required></div>
+            <div class="form-group"><label>Telefon</label><input type="tel" placeholder="0500 000 00 00" required></div>
+          </div>
+          <div class="form-group">
+            <label>Konu</label>
+            <select required>
+              <option value="">Terapi türü seçin</option>
+              <option>Çocuk Terapisi</option>
+              <option>Ergen Danışmanlığı</option>
+              <option>Yetişkin Psikoterapisi</option>
+              <option>Aile Danışmanlığı</option>
+              <option>Çift Terapisi</option>
+              <option>Travma Terapisi</option>
+              <option>Online Terapi</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Mesajınız</label><textarea placeholder="Kısaca durumunuzu anlatabilirsiniz..." rows="4"></textarea></div>
+          <button type="submit" class="btn btn-primary form-submit">Randevu Talebi Gönder →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Dr. Ayşe<span>.</span></div>
+        <p>Klinik Psikolog olarak bireylerin psikolojik sağlığını güçlendirmek ve daha mutlu bir yaşam sürmelerine destek olmak için buradayım.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hızlı Linkler</h4>
+        <ul>
+          <li><a href="#hakkinda">Hakkında</a></li>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#surec">Süreç</a></li>
+          <li><a href="#yorumlar">Yorumlar</a></li>
+          <li><a href="#sss">SSS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+905001234567">+90 500 123 45 67</a></li>
+          <li><a href="https://wa.me/905001234567" target="_blank">WhatsApp</a></li>
+          <li><a href="#iletisim">Randevu Al</a></li>
+          <li><a href="#">Nişantaşı, İstanbul</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Dr. Ayşe Kaya — Tüm hakları saklıdır.</span>
+      <span style="color:rgba(255,255,255,0.3);font-size:0.75rem">Klinik Psikolog · Lisans No: XXXXX</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Buttons -->
+<div class="floating-buttons">
+  <a href="https://wa.me/905001234567" target="_blank" class="floating-btn floating-btn-whatsapp" title="WhatsApp">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="tel:+905001234567" class="floating-btn floating-btn-phone" title="Ara">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+  </a>
+</div>
+
+<script>
+// Scroll navbar
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Form submit
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const success = document.getElementById('form-success');
+  success.style.display = 'flex';
+  e.target.reset();
+  setTimeout(() => { success.style.display = 'none'; }, 5000);
+}
+</script>
+</body>
+</html>
