@@ -25,12 +25,16 @@ export default function TestimonialsPage() {
   useScrollReveal();
 
   const testimonials = [
-    { stars: "⭐⭐⭐⭐⭐", text: "Oğlum sosyalleşmeyi ve paylaşmayı öğrendi.", author: "Ayşe A.", role: "Veli", avatar: "👦" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Dil gelişimi ve konuşması gözle görülür şekilde düzeldi.", author: "Mehmet Y.", role: "Veli", avatar: "👧" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Bana yapışık gezen çocuğum artık kendi başına oynuyor.", author: "Zeynep T.", role: "Veli", avatar: "👦" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Dr. Kaya'nın oyun terapisi yaklaşımı çocuğum için harika sonuçlar verdi. Çok memnunum.", author: "Fatma S.", role: "Veli", avatar: "👧" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Okula başlamadan önce adaptasyon seansları çocuğuma çok güven verdi.", author: "Ali D.", role: "Veli", avatar: "👦" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Profesyonel, saygılı ve çocuğumla çok iyi iletişim kuruyor. Kesinlikle tavsiye ederim.", author: "Can B.", role: "Veli", avatar: "👧" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Oğlum sosyalleşmeyi ve paylaşmayı öğrendi. Okula gitmekten korkuyor değil artık.", author: "Ayşe A.", role: "Veli (Çocuk)", avatar: "👩" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Dil gelişimi ve konuşması gözle görülür şekilde düzeldi. Çok teşekkür ederim.", author: "Mehmet Y.", role: "Veli (Çocuk)", avatar: "👨" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Bana yapışık gezen çocuğum artık kendi başına oynuyor. Harika bir değişim.", author: "Zeynep T.", role: "Veli (Çocuk)", avatar: "👩" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Ergenlik dönemindeki kızımın duygusal sorunlarında çok yardımcı oldu. Kendine güveni arttı.", author: "Fatma S.", role: "Veli (Ergen)", avatar: "👩" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Üniversite stresinden kurtulmak için başvurdum. Çok etkili ve profesyonel bir terapis.", author: "Ali D.", role: "Danışan (Genç)", avatar: "👨" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Evlilik danışmanlığı için geldim. Eşimle iletişim kurmayı yeniden öğrendik.", author: "Can B.", role: "Danışan (Yetişkin)", avatar: "👩" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Kaygı bozukluğum için 3 ay terapi aldım. Hayatım tamamen değişti. Çok teşekkür ederim.", author: "Selin K.", role: "Danışan (Yetişkin)", avatar: "👩" },
+    { stars: "⭐⭐⭐⭐⭐", text: "İş stresi ve burnout sendromu için başvurdum. Şimdi daha dengeli bir yaşam sürüyorum.", author: "Kerem T.", role: "Danışan (Yetişkin)", avatar: "👨" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Yaşlılıkta yalnızlık ve depresyon hissediyordum. Dr. Kaya'nın seansları bana yeni bir perspektif verdi.", author: "Hülya Ş.", role: "Danışan (Yaşlı)", avatar: "👵" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Travma terapisi aldım. Geçmişimi kabul etmeyi ve ileriye bakmayı öğrendim.", author: "Murat A.", role: "Danışan (Yetişkin)", avatar: "👨" },
   ];
 
   return (
