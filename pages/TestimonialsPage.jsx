@@ -25,12 +25,12 @@ export default function TestimonialsPage() {
   useScrollReveal();
 
   const testimonials = [
-    { stars: "⭐⭐⭐⭐⭐", text: "Oğlum sosyalleşmeyi ve paylaşmayı öğrendi.", author: "Ayşe A.", role: "Veli" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Dil gelişimi ve konuşması gözle görülür şekilde düzeldi.", author: "Mehmet Y.", role: "Veli" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Bana yapışık gezen çocuğum artık kendi başına oynuyor.", author: "Zeynep T.", role: "Veli" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Dr. Kaya'nın oyun terapisi yaklaşımı çocuğum için harika sonuçlar verdi. Çok memnunum.", author: "Fatma S.", role: "Veli" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Okula başlamadan önce adaptasyon seansları çocuğuma çok güven verdi.", author: "Ali D.", role: "Veli" },
-    { stars: "⭐⭐⭐⭐⭐", text: "Profesyonel, saygılı ve çocuğumla çok iyi iletişim kuruyor. Kesinlikle tavsiye ederim.", author: "Can B.", role: "Veli" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Oğlum sosyalleşmeyi ve paylaşmayı öğrendi.", author: "Ayşe A.", role: "Veli", avatar: "👦" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Dil gelişimi ve konuşması gözle görülür şekilde düzeldi.", author: "Mehmet Y.", role: "Veli", avatar: "👧" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Bana yapışık gezen çocuğum artık kendi başına oynuyor.", author: "Zeynep T.", role: "Veli", avatar: "👦" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Dr. Kaya'nın oyun terapisi yaklaşımı çocuğum için harika sonuçlar verdi. Çok memnunum.", author: "Fatma S.", role: "Veli", avatar: "👧" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Okula başlamadan önce adaptasyon seansları çocuğuma çok güven verdi.", author: "Ali D.", role: "Veli", avatar: "👦" },
+    { stars: "⭐⭐⭐⭐⭐", text: "Profesyonel, saygılı ve çocuğumla çok iyi iletişim kuruyor. Kesinlikle tavsiye ederim.", author: "Can B.", role: "Veli", avatar: "👧" },
   ];
 
   return (
@@ -54,8 +54,8 @@ export default function TestimonialsPage() {
                 "{testimonial.text}"
               </p>
               <div className="testimonial-author" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div className="testimonial-avatar" style={{ width: "40px", height: "40px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.85rem", fontWeight: "600", color: "white", flexShrink: 0, background: "var(--color-primary)" }}>
-                  {testimonial.author.charAt(0)}
+                <div className="testimonial-avatar" style={{ width: "40px", height: "40px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem", fontWeight: "600", color: "white", flexShrink: 0, background: "var(--color-primary)" }}>
+                  {testimonial.avatar}
                 </div>
                 <div>
                   <div className="testimonial-author-name" style={{ fontSize: "0.85rem", fontWeight: "600", color: "white" }}>{testimonial.author}</div>
